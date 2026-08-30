@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgenceDream - Agence de Voyage</title>
+
+   <!-- Bootstrap CSS et Icones -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#"><i class="bi bi-airplane-engines"></i> AgenceDream</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#voyages">Circuits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- 🖼️ HERO / JUMBOTRON -->
+    <section id="accueil" class="position-relative bg-dark">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="w-100" alt="Plage paradisiaque" style="height: 100vh; object-fit: cover;">
+        
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50"></div>
+
+        <div class="position-absolute top-50 start-50 translate-middle w-100 text-center text-white px-3">
+            <div class="container">
+                <h1 class="display-2 fw-bold mb-3">Explorez le monde</h1>
+                <p class="lead mb-4 fs-3">Des voyages inoubliables à des prix accessibles</p>
+                <a href="#destinations" class="btn btn-warning btn-lg px-5 fs-5">Découvrir nos destinations</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 🌍 DESTINATIONS (cartes) -->
+    <section id="destinations" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="display-5 fw-bold">Nos Destinations</h2>
+                    <p class="text-muted fs-5">Découvrez nos offres de voyage les plus populaires</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Destination 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" class="card-img-top"  alt="Paris" style="height: 220px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fs-4">Paris, France</h5>
+                            <p class="card-text">La ville lumière vous attend avec la Tour Eiffel, le Louvre et ses cafés charmants.</p>
+                            <span class="badge bg-primary fs-5 px-3 py-2">450 000 Fcfa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4" class="card-img-top"  alt="Bali" style="height: 220px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fs-4">Bali, Indonésie</h5>
+                            <p class="card-text">Temples sacrés, rizières verdoyantes et plages de sable blanc au paradis tropical.</p>
+                            <span class="badge bg-primary fs-5 px-3 py-2">380 000 Fcfa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" class="card-img-top"  alt="Dubaï" style="height: 220px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fs-4">Dubaï, Émirats</h5>
+                            <p class="card-text">Gratte-ciels futuristes, désert doré et shopping de luxe dans une ville spectaculaire.</p>
+                            <span class="badge bg-primary fs-5 px-3 py-2">520 000 Fcfa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- VOYAGES / CIRCUITS -->
+    <section id="voyages" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="display-5 fw-bold">Nos Circuits</h2>
+                    <p class="display-4 fs-5">Découvrez nos voyages organisés avec guide</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="accordionVoyages">
+
+                        <!-- Circuit 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#voyage1">
+                                    <i class="bi bi-globe-americas me-2"></i> Tour d'Europe - 15 jours
+                                </button>
+                            </h2>
+                            <div id="voyage1" class="accordion-collapse collapse show" data-bs-parent="#accordionVoyages">
+                                <div class="accordion-body">
+                                    <p class="mb-3">Découvrez les plus belles capitales européennes : Paris, Rome, Barcelone et Amsterdam. Hôtels 4 étoiles, transports inclus et guide francophone.</p>
+                                    <a href="#" class="btn btn-outline-primary"><i class="bi bi-info-circle"></i> Voir les détails</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Circuit 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#voyage2">
+                                    <i class="bi bi-globe-asia me-2"></i> Safari en Afrique - 10 jours
+                                </button>
+                            </h2>
+                            <div id="voyage2" class="accordion-collapse collapse" data-bs-parent="#accordionVoyages">
+                                <div class="accordion-body">
+                                    <p class="mb-3">Vivez l'aventure au Kenya et Tanzanie. Observation des Big Five, nuit en lodge de luxe et visite des villages Masaï.</p>
+                                    <a href="#" class="btn btn-outline-primary"><i class="bi bi-info-circle"></i> Voir les détails</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Circuit 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#voyage3">
+                                    <i class="bi bi-globe-europe-africa me-2"></i> Merveilles d'Asie - 12 jours
+                                </button>
+                            </h2>
+                            <div id="voyage3" class="accordion-collapse collapse" data-bs-parent="#accordionVoyages">
+                                <div class="accordion-body">
+                                    <p class="mb-3">Explorez la Thaïlande, le Vietnam et le Cambodge. Temples anciens, cuisine locale et plages paradisiaques.</p>
+                                    <a href="#" class="btn btn-outline-primary"><i class="bi bi-info-circle"></i> Voir les détails</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Circuit 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#voyage4">
+                                    <i class="bi bi-globe-americas me-2"></i> Amérique du Sud - 14 jours
+                                </button>
+                            </h2>
+                            <div id="voyage4" class="accordion-collapse collapse" data-bs-parent="#accordionVoyages">
+                                <div class="accordion-body">
+                                    <p class="mb-3">Du Pérou au Brésil en passant par l'Argentine. Machu Picchu, chutes d'Iguazu et carnaval de Rio.</p>
+                                    <a href="#" class="btn btn-outline-primary"><i class="bi bi-info-circle"></i> Voir les détails</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Formulaire de contact -->
+    <section id="contact" class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="display-5 fw-bold">Contactez-nous</h2>
+                    <p class="opacity-75 fs-5">Prêt à partir ? Demandez votre devis gratuit !</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="nom" class="form-label fs-5">Nom</label>
+                            <input type="text" class="form-control form-control-lg" id="nom" placeholder="Votre nom" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label fs-5">Email</label>
+                            <input type="email" class="form-control form-control-lg" id="email" placeholder="vous@exemple.com" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="message" class="form-label fs-5">Message</label>
+                            <textarea class="form-control form-control-lg" id="message" rows="5" placeholder="Quelle destination vous intéresse ? Dates souhaitées ?" required></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-warning btn-lg px-5 fs-5">
+                                <i class="bi bi-send"></i> Envoyer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Pied de page -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 fs-5">&copy; 2026 AgenceDream. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white fs-2 mx-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white fs-2 mx-2"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white fs-2 mx-2"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-white fs-2 mx-2"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

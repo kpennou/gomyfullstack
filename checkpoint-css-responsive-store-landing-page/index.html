@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleShop - Boutique en ligne</title>
+
+    <!-- Bootstrap et Icônes CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Notre fichier CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Navigation Bootstrap responsive -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow">
+            <div class="container">
+                <!-- Logo -->
+                <a href="#" class="navbar-brand logo"><i class="bi bi-bag-heart-fill"></i> StyleShop </a>
+
+                <!-- Bouton mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse" id="menuNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#produits">Produits</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bannière -->
+    <section id="accueil" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">La mode qui vous ressemble</h1>
+            <p class="hero-subtitle">Découvrez notre nouvelle collection automne 2026</p>
+            <a href="#produits" class="btn btn-primary">Voir la collection</a>
+        </div>
+    </section>
+
+
+
+    <!-- SECTION PRODUITS -->
+    <section id="produits" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Produits</h2>
+                <p class="section-subtitle">Découvrez nos articles les plus populaires</p>
+            </div>
+
+            <!-- Grille de produits -->
+            <div class="products-grid">
+
+                <!-- Produit 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Sneakers rouges">
+                        <span class="product-badge">Nouveau</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sneakers Urban</h3>
+                        <p class="product-description">Sneakers tendance en cuir véritable, confort optimal pour un look urbain.</p>
+                        <div class="product-footer">
+                            <span class="product-price">25 000 Fcfa</span>
+                            <button class="btn btn-buy">Acheter maintenant</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea" alt="Veste en jean">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Veste en Jean</h3>
+                        <p class="product-description">Veste classique en denim de qualité, intemporelle et polyvalente.</p>
+                        <div class="product-footer">
+                            <span class="product-price">18 000 Fcfa</span>
+                            <button class="btn btn-buy">Acheter maintenant</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Sac à main">
+                        <span class="product-badge">Promo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sac Élégance</h3>
+                        <p class="product-description">Sac à main en cuir véritable, design élégant pour toutes les occasions.</p>
+                        <div class="product-footer">
+                            <span class="product-price">32 000 Fcfa</span>
+                            <button class="btn btn-buy">Acheter maintenant</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="Montre">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Montre Classique</h3>
+                        <p class="product-description">Montre élégante avec bracelet en acier, parfaite pour le quotidien.</p>
+                        <div class="product-footer">
+                            <span class="product-price">45 000 Fcfa</span>
+                            <button class="btn btn-buy">Acheter maintenant</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION À PROPOS -->
+    <section id="apropos" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">À propos de StyleShop</h2>
+                    <p>Depuis 2015, StyleShop vous propose une sélection soignée de vêtements et accessoires 
+                       de qualité. Notre mission : rendre la mode accessible à tous, sans compromis sur le style.</p>
+                    <p>Nous travaillons avec des créateurs locaux et internationaux pour vous offrir 
+                       des pièces uniques qui reflètent votre personnalité.</p>
+                    <a href="#contact" class="btn btn-secondary">Nous contacter</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8" alt="Notre boutique">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- SECTION CONTACT -->
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contactez-nous</h2>
+                <p class="section-subtitle">Une question ? Nous sommes là pour vous aider !</p>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="vous@exemple.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Votre message..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!--  PIED DE PAGE -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-logo">
+                        <i class="bi bi-bag-heart-fill"></i> StyleShop
+                    </h3>
+                    <p>Votre boutique de mode en ligne</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#produits">Produits</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 StyleShop. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS (nécessaire pour le menu burger, pas de JS personnalisé) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

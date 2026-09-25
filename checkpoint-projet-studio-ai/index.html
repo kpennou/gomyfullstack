@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Liste de Tâches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>📝 Mes Tâches</h1>
+            <p>Organisez votre journée simplement et efficacement.</p>
+        </header>
+        
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Ajouter une nouvelle tâche..." aria-label="Nouvelle tâche">
+            <button id="addBtn" aria-label="Ajouter la tâche">+</button>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Toutes</button>
+            <button class="filter-btn" data-filter="active">À faire</button>
+            <button class="filter-btn" data-filter="completed">Terminées</button>
+        </div>
+
+        <ul id="taskList" class="task-list">
+            <!-- Les tâches seront injectées ici par JavaScript -->
+        </ul>
+        
+        <div class="footer-info">
+            <span id="itemsLeft">0 tâche(s) restante(s)</span>
+            <button id="clearCompleted" class="clear-btn">Effacer les terminées</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

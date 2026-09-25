@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartes de Prix Réutilisables</title>
+  <style>
+    /* ===== Reset & Base ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    /* ===== Conteneur des cartes ===== */
+    .pricing-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+    }
+
+    /* ===== Carte de prix ===== */
+    .pricing-card {
+      width: 100%;
+      max-width: 320px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== Titre ===== */
+    .pricing-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== Prix ===== */
+    .pricing-price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #6366f1;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #6b7280;
+    }
+
+    /* ===== Liste des fonctionnalités ===== */
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .pricing-features li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #e5e7eb;
+      color: #4b5563;
+      display: flex;
+      align-items: center;
+    }
+
+    .pricing-features li::before {
+      content: "✓";
+      color: #10b981;
+      font-weight: bold;
+      margin-right: 0.75rem;
+      font-size: 1.2rem;
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    /* ===== Bouton ===== */
+    .pricing-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.875rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .pricing-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .pricing-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .pricing-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pricing-container" id="pricing-container"></div>
+
+  <script>
+    /**
+     * Fonction réutilisable pour créer une carte de prix
+     * @param {Object} options - Configuration de la carte
+     * @param {string} options.title - Titre du plan
+     * @param {string} options.price - Prix affiché
+     * @param {string} options.period - Période (ex: "/mois")
+     * @param {Array<string>} options.features - Liste des fonctionnalités
+     * @param {string} options.buttonText - Texte du bouton
+     * @returns {HTMLElement} - L'élément carte créé
+     */
+    function createPricingCard({ title, price, period = '/mois', features, buttonText }) {
+      // Création de la carte
+      const card = document.createElement('article');
+      card.className = 'pricing-card';
+
+      // Titre
+      const titleEl = document.createElement('h2');
+      titleEl.className = 'pricing-title';
+      titleEl.textContent = title;
+
+      // Prix
+      const priceEl = document.createElement('p');
+      priceEl.className = 'pricing-price';
+      priceEl.innerHTML = `${price} <span>${period}</span>`;
+
+      // Liste des fonctionnalités
+      const featuresList = document.createElement('ul');
+      featuresList.className = 'pricing-features';
+      features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featuresList.appendChild(li);
+      });
+
+      // Bouton
+      const button = document.createElement('button');
+      button.className = 'pricing-btn';
+      button.textContent = buttonText;
+      button.addEventListener('click', () => {
+        alert(`Vous avez choisi le plan: ${title}`);
+      });
+
+      // Assemblage
+      card.appendChild(titleEl);
+      card.appendChild(priceEl);
+      card.appendChild(featuresList);
+      card.appendChild(button);
+
+      return card;
+    }
+
+    // ===== Utilisation du composant =====
+    const container = document.getElementById('pricing-container');
+
+    // Carte 1: Basic
+    const basicCard = createPricingCard({
+      title: 'Basic Plan',
+      price: '9,99€',
+      period: '/mois',
+      features: [
+        '1 GB de stockage',
+        'Support basique',
+        'Fonctionnalités essentielles'
+      ],
+      buttonText: 'Commencer l\'essai'
+    });
+
+    // Carte 2: Pro
+    const proCard = createPricingCard({
+      title: 'Pro Plan',
+      price: '29,99€',
+      period: '/mois',
+      features: [
+        '50 GB de stockage',
+        'Support prioritaire',
+        'Toutes les fonctionnalités',
+        'API access'
+      ],
+      buttonText: 'Choisir Pro'
+    });
+
+    // Carte 3: Enterprise
+    const enterpriseCard = createPricingCard({
+      title: 'Enterprise',
+      price: '99,99€',
+      period: '/mois',
+      features: [
+        'Stockage illimité',
+        'Support 24/7',
+        'Fonctionnalités avancées',
+        'API access',
+        'SLA garanti'
+      ],
+      buttonText: 'Contacter les ventes'
+    });
+
+    // Ajout au DOM
+    container.appendChild(basicCard);
+    container.appendChild(proCard);
+    container.appendChild(enterpriseCard);
+  </script>
+
+</body>
+</html>
